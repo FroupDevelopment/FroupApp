@@ -1,0 +1,5 @@
+Allowed Devices:
+	Alex Labia
+
+Expiration Date:
+	cert & profile 28/10/2015
