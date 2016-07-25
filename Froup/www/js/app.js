@@ -3,7 +3,7 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('starter', ['ionic'])
+angular.module('starter', ['ionic', 'ionic.contrib.ui.tinderCards', 'starter.controllers', 'starter.services', 'starter.directives'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -22,3 +22,86 @@ angular.module('starter', ['ionic'])
     }
   });
 })
+
+.config(function($stateProvider, $urlRouterProvider) {
+  
+  $stateProvider
+
+  .state('login', {
+      url: '/login',
+      templateUrl: 'templates/login.html',
+      controller: 'LoginCtrl'
+  })
+
+  .state('main', {
+    url: '/main',
+    abstract: true,
+    templateUrl: 'templates/main.html',
+    controller: 'MainCtrl'
+  })
+
+  .state('main.cards', {
+      url: '/cards',
+      views: {
+        'mainContent': {
+          templateUrl: 'views/cards/cards.html',
+          directive: 'noScroll',
+          controller: 'CardsCtrl'
+        }
+      }
+  })
+
+  .state('main.settings',{
+    url: '/settings',
+    views: {
+        'mainContent': {
+          templateUrl: 'views/settings/settings.html',
+          directive: 'noScroll',
+          controller: 'MainCtrl'
+        }
+    }
+  })
+  .state('main.helpandsupport',{
+    url: '/helpandsupport',
+    views: {
+        'mainContent': {
+          templateUrl: 'views/helpandsupport/helpandsupport.html',
+          directive: 'noScroll',
+          controller: 'MainCtrl'
+        }
+    }
+  })
+  .state('main.upgrade',{
+    url: '/upgrade',
+    views: {
+        'mainContent': {
+          templateUrl: 'views/upgrade/upgrade.html',
+          directive: 'noScroll',
+          controller: 'MainCtrl'
+        }
+    }
+  })
+  .state('main.share',{
+    url: '/share',
+    views: {
+        'mainContent': {
+          templateUrl: 'views/share/share.html',
+          directive: 'noScroll',
+          controller: 'MainCtrl'
+        }
+    }
+  })
+  .state('main.about',{
+    url: '/about',
+    views: {
+        'mainContent': {
+          templateUrl: 'views/about/about.html',
+          directive: 'noScroll',
+          controller: 'MainCtrl'
+        }
+    }
+  })
+  $urlRouterProvider.otherwise('/login');
+})
+;
+
