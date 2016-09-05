@@ -1,25 +1,102 @@
 /* Empty. Add your own CSS if you like */
+
+
+@font-face {
+    font-family: 'Roboto-Light';
+    src: url('../fonts/Roboto-Light.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+* {
+    font-family: 'Roboto-Light' !important;
+}
+
 /* Card styling */
+
+.cardTitle{
+    color:black;
+    font-size: 25px;
+    padding-bottom: 30px;
+    text-align: center;
+
+}
+
+.bar .title{
+    font-size: 25px;
+    color: #f4ebd9 !important;
+}
+.bar-stable .button.button-icon{
+    color: #f4ebd9 !important;
+}
+.menuHead{
+    background-color: #058ed9 !important; 
+    color: #f4ebd9;
+}
+.menuHead .item {
+  background-color: transparent;
+  border:none;   /*Removes all borders*/
+  border-top: 1px solid;   /*Top Border for each menu item*/
+  border-bottom:2px solid;   /*Bottom border for each menu item*/
+  border-color: #666;   /*Sets colors for top and bottom border*/
+  color: white;    /*Text color for each item*/
+}
+ 
+/*Changes the border for the last item*/
+.menuHead .item:last-child {
+  border-bottom: 1px solid #666;
+}
+ 
+.menuHead .item-complex .item-content, .dark .item-radio .item-content {
+  background-color: transparent;
+}
+ 
+
+
+
 .pane{
   background-color:#f3f3f3;
 }
-
+.menuBack{
+    background-color: #483d3f !important; 
+}
+.menuBack .item {
+  background-color: transparent;
+  border:none;   /*Removes all borders*/
+  border-top: 1px solid;   /*Top Border for each menu item*/
+  border-bottom:2px solid;   /*Bottom border for each menu item*/
+  border-color: #666;   /*Sets colors for top and bottom border*/
+  color: white;    /*Text color for each item*/
+}
+ 
+/*Changes the border for the last item*/
+.menuBack .item:last-child {
+  border-bottom: 1px solid #666;
+}
+ 
+.menuBack .item-complex .item-content, .dark .item-radio .item-content {
+  background-color: transparent;
+}
+ 
+/*Just makes the type white*/
+.menuBack h2,
+.menuBack h3,
+.menuBack p,
+.menuBack a {
+  color: white;  /*Text color for each item, overrides the color property above*/
+}
 td-cards {
     display: block;
 }
 
 td-card {
     position: absolute;
-    left: 50%;
-    margin: 80px 0 40px -150px;
-    width: 300px;
-    height: 300px;
-    border: 1px solid #999;
-    box-shadow: 0px 1px 3px rgba(0,0,0,0.2);
+    margin-top: 80px;
+    width: 100%;
+    
     border-radius: 10px;
     background-color: rgb(255,255,255);
     color: #fff;
-    padding: 0 20px;
+    
 }
 
 td-card .image {
@@ -29,7 +106,7 @@ td-card .image {
 
 td-card img {
     margin-top: 20px;
-    height: 258px;
+
     width: 100%;
 }
 
@@ -49,13 +126,15 @@ td-card .buttondesc button{
 /* Overlay styling*/
 
 .overlayBox {
+    border-radius: 10px;
     position: absolute;
-    left: 50%;
-    height: 98%;
     width: 100%;
     top: -80px;
     opacity: 0;
-    margin: 80px 0 0 -149px;
+    margin: 80px 0 0 ;
+    left: 0;
+    right: 0;
+    height: 100%;
 }
 
 .boxed {

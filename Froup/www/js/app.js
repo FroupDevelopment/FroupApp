@@ -102,6 +102,14 @@ angular.module('starter', ['ionic', 'ionic.contrib.ui.tinderCards', 'starter.con
     }
   })
   $urlRouterProvider.otherwise('/login');
-})
-;
+});
+
+angular.module('froup',['backand'])
+
+myApp.config(function (BackandProvider) {
+      BackandProvider.setAppName('froup');
+      BackandProvider.setSignUpToken('559d411b-58c8-4c57-a514-7828b4ef2fba');
+      BackandProvider.setAnonymousToken('fdd40dc4-aaae-4e88-9a20-274a5acf5703');
+  })
+
 

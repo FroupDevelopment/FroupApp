@@ -17,12 +17,12 @@ angular.module('starter')
 
     $scope.addCard = function(i) {
         
-        var newCard = cardTypes[Math.floor(Math.random() * cardTypes.length)];
+        var newCard = cardTypes[i];
         newCard.id = Math.random();
         $scope.cards.push(angular.extend({}, newCard));
     }
 
-    for(var i = 0; i < 6; i++) $scope.addCard();
+    for(var i = 0; i < 6; i++) $scope.addCard(i);
 
     $scope.toggleLeft = function() {
         $ionicSideMenuDelegate.toggleLeft();
