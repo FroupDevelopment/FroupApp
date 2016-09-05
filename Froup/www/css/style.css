@@ -186,3 +186,21 @@ td-card .buttondesc button{
 {
     display: none;
 }
+
+.login-background {
+    background: url(../../img/HipsterCafe.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
+
+.logo{
+    font-weight: bold;
+    font-size: 5.5em;
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    color: white;
+    text-align: center;
+    padding-bottom: 60%;
+}
+
+.main-background{
+    background-color:#f3f3f3;
+}

@@ -3,9 +3,10 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('starter', ['ionic', 'ionic.contrib.ui.tinderCards', 'starter.controllers', 'starter.services', 'starter.directives'])
+angular.module('starter', ['ionic', 'ionic.contrib.ui.tinderCards', 'starter.controllers', 'starter.services', 'starter.directives', 'ngOpenFB'])
 
-.run(function($ionicPlatform) {
+.run(function($ionicPlatform, ngFB) {
+  ngFB.init({appId: '1066470846740922'});
   $ionicPlatform.ready(function() {
     if(window.cordova && window.cordova.plugins.Keyboard) {
       // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -32,6 +33,16 @@ angular.module('starter', ['ionic', 'ionic.contrib.ui.tinderCards', 'starter.con
       templateUrl: 'templates/login.html',
       controller: 'LoginCtrl'
   })
+
+  .state('main.profile', {
+    url: "/profile",
+    views: {
+        'mainContent': {
+            templateUrl: "views/profile/profile.html",
+            controller: "ProfileCtrl"
+        }
+    }
+})
 
   .state('main', {
     url: '/main',
@@ -104,12 +115,12 @@ angular.module('starter', ['ionic', 'ionic.contrib.ui.tinderCards', 'starter.con
   $urlRouterProvider.otherwise('/login');
 });
 
-angular.module('froup',['backand'])
+// angular.module('froup',['backand'])
 
-myApp.config(function (BackandProvider) {
-      BackandProvider.setAppName('froup');
-      BackandProvider.setSignUpToken('559d411b-58c8-4c57-a514-7828b4ef2fba');
-      BackandProvider.setAnonymousToken('fdd40dc4-aaae-4e88-9a20-274a5acf5703');
-  })
+// app.config(function (BackandProvider) {
+//       BackandProvider.setAppName('froup');
+//       BackandProvider.setSignUpToken('559d411b-58c8-4c57-a514-7828b4ef2fba');
+//       BackandProvider.setAnonymousToken('fdd40dc4-aaae-4e88-9a20-274a5acf5703');
+//   })
 
 
